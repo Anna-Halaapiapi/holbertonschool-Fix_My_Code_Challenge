@@ -1,1 +1,1 @@
-README for fix my code dir.
+README for fix my code repo.
