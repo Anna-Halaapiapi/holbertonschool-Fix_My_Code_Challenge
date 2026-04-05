@@ -46,15 +46,15 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	{
 		if ((*head)->next != NULL) /* head is not last in list */
 			{
-			(*head)->next->prev = (*head)->prev; /* point head's next's prev to head's prev */
-			(*head)->prev->next = (*head)->next; /* point head's prev's next to head's next */
+			(*head)->next->prev = (*head)->prev;
+			(*head)->prev->next = (*head)->next; 
 			}
-		else /* head is last on list (head's next is NULL) */
+		else /* head is last in the last */
 			{
-			(*head)->prev->next = NULL; /* point head's prev's next to NULL (make it the tail) */
+			(*head)->prev->next = NULL;
 			}
+		free(*head);
 		*head = saved_head;
-		free(*head); /*  free node after pointer reassignments*/
 	}
 	return (1);
 }
